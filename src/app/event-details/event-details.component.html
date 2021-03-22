@@ -1,0 +1,15 @@
+<div class="event-details">    
+    <div>
+        <h1>{{ event.title }}</h1>
+    </div>
+    <div class="event-field">{{ event.description }}</div>
+    <div class="event-field">{{ event.date }}</div>
+    <div class="event-field">
+        Participants:
+        <ul>
+            <li class="event-field" *ngFor="let participant of event.participants">
+                {{ participant.firstName + ' ' + participant.lastName }}
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div>
+    <h1>Add New Event</h1>
+    <div class="event-field"><label>Title:</label><input [(ngModel)]="title"/></div>
+    <div class="event-field"><label>Description:</label><input [(ngModel)]="description"/></div>
+    <div class="event-field"><label>Day of Month:</label><input type="number" [(ngModel)]="date"/></div>
+    <div class="event-field"><label>Time:</label><input type="time" [(ngModel)]="time"/></div>
+    <div>
+        <label>Participants</label><button (click)="onAddParticipant()">+</button>
+    </div>
+    <ul>
+        <li>
+            <div class="event-field"><label>First Name:</label><input [(ngModel)]="firstParticipant.firstName"/></div>
+            <div class="event-field"><label>Last Name:</label><input [(ngModel)]="firstParticipant.lastName"/></div>
+        </li>
+        <li class="additional-participant" *ngFor="let participant of otherParticipants; index as participantIndex">
+            <div class="event-field"><label>First Name:</label><input [(ngModel)]="participant.firstName"/></div>
+            <div class="event-field"><label>Last Name:</label><input [(ngModel)]="participant.lastName"/></div>
+            <div><button (click)="onRemoveParticipant(participantIndex)">Delete</button></div>
+        </li>
+    </ul>
+    <div></div>
+</div>
+<div class="dialog-buttons">
+    <button class="save-button" (click)="onSave()">Save</button>
+    <button class="cancel-button" (click)="onCancel()">Cancel</button>
+</div>

@@ -1,0 +1,11 @@
+.event-details {
+    * {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .event-field {
+        margin-top: 5px;
+    }
+}

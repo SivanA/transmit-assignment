@@ -1,0 +1,65 @@
+#day-grid {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(7, 14%);
+
+        .grid-cell {
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+        }   
+
+        .day-cell {
+            height: 150px;
+            padding-left: 5px;
+        }
+
+        .day-cell:nth-child(7n+1) {
+            border-left: 1px solid black;
+        }
+
+        .day-name-cell {
+            height: 25px;
+            text-align: center;
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+
+        .highlighted {
+            background-color: lightblue;
+        }
+
+        .day-events {
+            list-style: none;
+            padding-left: 0;
+
+            .event {
+                cursor: pointer;
+                .event-time {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+
+                .event-title {                
+                    display: inline-block;
+                    vertical-align: middle;
+                    padding-left: 5px;
+                    max-width: 120px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+    }
+
+    .add-event {
+        margin-top: 10px;
+        margin-left: 50%;
+        
+        button {
+            cursor: pointer;
+        }
+    }
+}

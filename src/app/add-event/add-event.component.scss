@@ -1,0 +1,21 @@
+.event-field {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+
+    label {
+        display: inline-block;
+    }
+}
+
+.additional-participant {
+    margin-top: 5px;
+}
+
+.dialog-buttons {
+    float: right;
+    
+    button {
+        margin-left: 5px;
+    }
+}

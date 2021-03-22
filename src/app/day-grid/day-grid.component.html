@@ -1,0 +1,20 @@
+<div id="day-grid">
+    <div class="grid-container">
+        <div class="grid-cell day-name-cell" *ngFor="let name of dayNames">{{ name }}</div>
+    </div>
+    <div class="grid-container">
+        <div class="grid-cell day-cell" *ngFor="let fillerDay of fillerDays"></div>
+        <div class="grid-cell day-cell" [class.highlighted]="day.isWeekend" *ngFor="let day of days">
+            <span>{{ day.index }}</span>
+            <ul class="day-events">
+                <li class="event" (click)="onEventClick(event)" *ngFor="let event of day.events">
+                    <span class="event-time">{{ event.time }}</span>
+                    <span class="event-title">{{ event.title }}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="add-event">
+        <button (click)="onAddEventClick()">Add Event</button>
+    </div>
+</div>
